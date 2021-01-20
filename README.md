@@ -16,12 +16,19 @@
 
 <h2> ⚙️ Pré - requisitos</h2>
 
+<p>
+  Ter o <strong>Node.JS</strong> e o <strong>NPM</strong> instalados 
+  em sua máquina. <br>
+  Caso não tenha,
+
+</p>
+
 <h2>Instalação</h2>
 
 <h2> 🛠 Tecnologias</h2>
 
 <p> 
-  Tecnologias utilizadas no projeto: <br>
+  Tecnologia utilizada no projeto: <br>
   
   • <a href="https://gulpjs.com/"> Gulp</a>
   

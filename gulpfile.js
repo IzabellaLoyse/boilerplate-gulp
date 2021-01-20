@@ -1,4 +1,6 @@
-/* Variables */
+/*==============================================================================
+  #Variáveis de configuração.
+==============================================================================*/
 const gulp = require("gulp");
 const htmlmin = require("gulp-htmlmin");
 const sass = require("gulp-sass");
@@ -12,8 +14,18 @@ const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 
-/* Browser Sync */
 
+
+
+
+/*------------------------------------------------------------------------------ 
+  #BROWSERSYNC
+------------------------------------------------------------------------------*/
+
+/* 
+ * Atualiza automaticamente as alterações feitas na pasta SRC.
+ * Funciona como um server.
+ */
 gulp.task('serve', () => {
   browserSync.init({
     server: {
@@ -25,7 +37,16 @@ gulp.task('serve', () => {
 });
 
 
-/* HTML Minify */
+
+
+
+/*------------------------------------------------------------------------------ 
+  #HTMLMIN
+------------------------------------------------------------------------------*/
+
+/* 
+ * Mimifica os arquivos HTML presentes na pasta SRC para a pasta DIST
+ */
 gulp.task("minify", () => {
   return gulp
     .src("./src/**/*.html")
@@ -37,7 +58,18 @@ gulp.task("minify", () => {
 
 
 
-/* IMAGES Minify */
+
+
+/*------------------------------------------------------------------------------ 
+  #IMAGEMIN
+------------------------------------------------------------------------------*/
+
+/* 
+  * Otimiza as imagens presentes na pasta IMG do diretório SRC para o diretório
+  * DIST na pasta IMG
+  * Aceita PNG,SVG,GIF e JPEG
+
+*/
 gulp.task("images", () => {
   gulp
   gulp.src('./src/img/*')
@@ -71,7 +103,19 @@ gulp.task("images", () => {
 
 
 
-/* SASS */
+
+
+/*------------------------------------------------------------------------------ 
+  #SASS 
+------------------------------------------------------------------------------*/
+
+/* 
+ * Executa arquivos .SASS , .SCSS
+ * Compila os arquivos Sass para a pasta CSS já com autoprefixer,
+ *  css mimificado.
+ * Contém o arquivo sourcemaps na pasta CSS.
+ * O Notify avisa sobre erros presentes nos arquivos 
+ */
 gulp.task("sass", () => {
   return gulp
     .src("./src/sass/**/*.scss")
@@ -88,7 +132,16 @@ gulp.task("sass", () => {
 
 
 
-/* JavaScript */
+
+
+/*------------------------------------------------------------------------------ 
+  #JAVASCRIPT
+------------------------------------------------------------------------------*/
+
+/* 
+ * 
+ * O Notify avisa sobre erros presentes nos arquivos 
+ */
 gulp.task("javascript", () => {
   gulp
     .src("./src/js/**/*.js")
@@ -99,12 +152,27 @@ gulp.task("javascript", () => {
 });
 
 
+
+
+
+/*------------------------------------------------------------------------------ 
+  #WATCH
+-------------------------------------------------------------------------------*/
+
+/* 
+  * Assiste as alterações feitas nos arquivos
+
+*/
 gulp.task("watch", () => {
   gulp.watch("./src/**/*.html", ["minify"]);
   gulp.watch("./src/sass/**/*.scss", ["sass"]);
   gulp.watch("./src/js/**/*.js", ["javascript"]);
   gulp.watch("./src/img/*", ["images"]);
 });
+
+
+
+
 
 gulp.task("default", (done) => {
   gulp.series("watch", "minify", "sass", "javascript", "images", "serve");
