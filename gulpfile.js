@@ -17,11 +17,11 @@ const reload = browserSync.reload;
 gulp.task('serve', () => {
   browserSync.init({
     server: {
-      baseDir: "./"
+      baseDir: "src"
     }
 
   });
-  gulp.watch("./src/**/*.html").on('change', reload);
+  gulp.watch("./src/**/*").on('change', browserSync.reload);
 });
 
 
