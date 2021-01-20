@@ -1,0 +1,32 @@
+{
+  "name": "boilerplate-gulp",
+  "version": "1.0.0",
+  "description": "Boilerplate com funcionalidades prontas para se utilizar no Gulp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IzabellaLoyse/boilerplate-gulp.git"
+  },
+  "author": "Izabella Loyse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IzabellaLoyse/boilerplate-gulp/issues"
+  },
+  "homepage": "https://github.com/IzabellaLoyse/boilerplate-gulp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}
